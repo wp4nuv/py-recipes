@@ -17,3 +17,13 @@ services:
       - "55211:8000"
     depends_on:
       - db
+  pgadmin:
+    image: dpage/pgadmin4
+    ports:
+      - "55800:80"
+    volumes:
+      - ./pgadmin:/var/lib/pgadmin
+      - ./servers.json:/servers.json
+    environment:
+      - "PGADMIN_DEFAULT_EMAIL=wp4nuv@me.com"
+      - "P9GADMIN_DEFAULT_PASSWORD=cuddles7484"
